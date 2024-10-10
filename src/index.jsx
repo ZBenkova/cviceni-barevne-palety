@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./style.css";
 import { palettes } from "./palettes.js";
 import { SchemeColor } from "./folder/SchemeColor";
+import { Palette } from "./folder/Palette";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
         <h1>Barevné palety</h1>
       </header>
       <main>
-        <div className="palette">
+        {/* <div className="palette">
           <div className="palette-scheme palette-scheme--vertical">
             <img
               className="scheme-image"
@@ -159,6 +160,13 @@ const App = () => {
               ))}
             </div>
           </div>
+        </div>
+        <Palette paletteData={palettes[0]} /> */}
+
+        <div>
+          {palettes.map((palette) => (
+            <Palette paletteData={palette} key={palette.name} />
+          ))}
         </div>
       </main>
 
